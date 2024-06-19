@@ -1,0 +1,19 @@
+.label {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    display: block;
+    text-align: center;
+}
+
+.input {
+    margin-bottom: 28px;
+    border: none;
+    background-color: #CCC;
+    border-radius: 12px;
+    padding: 12px 16px;
+    width: 120px;
+}
+
+.input:focus {
+    outline: 2px solid #1d4ed8;
+}
