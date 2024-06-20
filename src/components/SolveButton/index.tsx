@@ -1,5 +1,16 @@
 import styles from './solveButton.module.css';
 
-export const SolveButton = () => {
-  return <button className={styles['button']}>Solve Challenge</button>;
+interface Props {
+  onClickButton: () => void;
+}
+
+export const SolveButton = ({ onClickButton }: Props) => {
+  return (
+    <button
+      className={styles['button']}
+      onClick={onClickButton}
+    >
+      Solve Challenge
+    </button>
+  );
 };
