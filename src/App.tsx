@@ -1,4 +1,4 @@
-import { useForm } from './hooks/useForm';
+import { useSolveChallenge } from './hooks/useSolveChallenge';
 import { BucketsContainer } from './components/home/BucketsForm/BucketsContainer';
 import { BucketImage } from './components/home/BucketsForm/BucketImage';
 import { BucketInput } from './components/home/BucketsForm/BucketInput';
@@ -15,7 +15,7 @@ function App() {
     challengeSolution,
     onChangeValue,
     onClickButton,
-  } = useForm();
+  } = useSolveChallenge();
 
   return (
     <main>
