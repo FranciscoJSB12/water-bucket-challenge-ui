@@ -20,8 +20,10 @@ export const useForm = () => {
     const numbers = Object.values(values);
 
     for (const num of numbers) {
-      if (!pattern.test(num)) setValidationError(true);
-      return;
+      if (!pattern.test(num)) { 
+        setValidationError(true);
+        return;
+      };
     }
 
     console.log(values);
