@@ -1,20 +1,22 @@
 import { useForm } from './hooks/useForm';
-import { BucketsContainer } from './components/BucketsContainer';
-import { Bucket } from './components/Bucket';
-import { BucketInput } from './components/BucketInput';
-import { SolveButton } from './components/SolveButton';
+import { BucketsContainer } from './components/home/BucketsContainer';
+import { BucketImage } from './components/home/BucketImage';
+import { BucketInput } from './components/home/BucketInput';
+import { SolveButton } from './components/home/SolveButton';
 import { bucketInputs } from './utils/bucketInputs';
-import { ValidationError } from './components/ValidationError';
+import { ValidationError } from './components/home/ValidationError';
+import { MainTitle } from './components/ui/MainTitle';
 
 function App() {
   const { values, validationError, onChangeValue, onClickButton } = useForm();
 
   return (
     <main>
+      <MainTitle text='Welcome to the Water bucket challenge!' />
       <BucketsContainer>
         {bucketInputs.map(bucketInput => (
           <div key={bucketInput.src}>
-            <Bucket
+            <BucketImage
               src={bucketInput.src}
               alt={bucketInput.alt}
             />
