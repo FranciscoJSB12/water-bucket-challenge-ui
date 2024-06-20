@@ -1,4 +1,6 @@
 import { ChangeEvent, useState } from 'react';
+import { postBucketsData } from '../actions/home/post-buckets-data';
+import { BucketsData } from '../interfaces/buckets-data.interface';
 
 const initialValues: { [key: string]: string } = {
   bucketX: '1',
@@ -26,23 +28,15 @@ export const useForm = () => {
       };
     }
 
-    const data = {
-      bucketX: values.bucketX,
-      bucketY: values.bucketY,
-      amountWantedZ: values.amountWanted
+    const data: BucketsData = {
+      bucketX: +values.bucketX,
+      bucketY: +values.bucketY,
+      amountWantedZ: +values.amountWanted
     }
 
-    const res = await fetch('/api/bucket-challenge', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
+    const response = await postBucketsData(data);
 
-    const result = await res.json();
-
-    console.log(result);
+    console.log(response);
   };
 
   return {
