@@ -6,12 +6,12 @@ import { BucketsData } from "../../interfaces/buckets-data.interface";
 export const postBucketsData = async (data: BucketsData): Promise<BucketsAPIReponse> => {
   try {
     
-    const { data: response } = await bucketChallengApi.post('bucket-challenge', data);
-    return response;
+    const response = await bucketChallengApi.post('bucket-challenge', data);
+    return response.data;
 
   } catch (error) {
 
-    console.log(error);
+    console.error(error);
     throw new Error('Error sending data');
 
   }

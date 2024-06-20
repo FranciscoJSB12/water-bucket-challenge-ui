@@ -7,10 +7,13 @@ import { bucketInputs } from './utils/bucketInputs';
 import { ValidationError } from './components/home/BucketsForm/ValidationError';
 import { MainTitle } from './components/ui/MainTitle';
 import { SolutionGrid } from './components/home/ChallengeSolution/SolutionGrid';
+import { Footer } from './components/ui/Footer';
 
 function App() {
   const {
     values,
+    loading,
+    error,
     validationError,
     challengeSolution,
     onChangeValue,
@@ -36,11 +39,19 @@ function App() {
           </div>
         ))}
       </BucketsContainer>
-      <SolveButton onClickButton={onClickButton} />
+      <SolveButton
+        onClickButton={onClickButton}
+        disabled={loading}
+      />
       {validationError && <ValidationError />}
       {challengeSolution && (
-        <SolutionGrid challengeSolution={challengeSolution} />
+        <SolutionGrid
+          challengeSolution={challengeSolution}
+          loading={loading}
+          error={error}
+        />
       )}
+      <Footer />
     </main>
   );
 }

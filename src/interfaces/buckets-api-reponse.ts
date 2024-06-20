@@ -1,4 +1,5 @@
 export interface BucketsAPIReponse {
+    ok: boolean;
     isSolutionPossible: boolean;
     results:           Result[];
 }

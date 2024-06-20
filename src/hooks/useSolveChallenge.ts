@@ -5,6 +5,8 @@ import { postBucketsData } from '../actions/home/post-buckets-data';
 
 export const useSolveChallenge = () => {
   const { values, onChangeValue, validationError, validateData } = useForm();
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [challengeSolution, setChallengeSolution] =
   useState<BucketsAPIReponse>();
 
@@ -14,13 +16,27 @@ export const useSolveChallenge = () => {
 
     if (!data) return;
 
-    const response = await postBucketsData(data);
+    try {
+      setLoading(true);
+      error && setError(false);
+      
+      const response = await postBucketsData(data);
 
-    setChallengeSolution(response);
+      if(!response.ok) throw new Error('Error sending data');
+
+      setLoading(false);
+      
+      setChallengeSolution(response);
+    } catch (err) {
+      setLoading(false);
+      setError(true);
+    }
   };
 
   return {
     values,
+    loading,
+    error,
     validationError,
     challengeSolution,
     onChangeValue,

@@ -1,0 +1,14 @@
+.footer {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.text {
+    text-align: center;
+}
+
+.anchor {
+    color: #000;
+    font-size: 1.2rem;
+}
