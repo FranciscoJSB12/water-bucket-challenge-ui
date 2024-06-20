@@ -1,14 +1,21 @@
 import { useForm } from './hooks/useForm';
-import { BucketsContainer } from './components/home/BucketsContainer';
-import { BucketImage } from './components/home/BucketImage';
-import { BucketInput } from './components/home/BucketInput';
-import { SolveButton } from './components/home/SolveButton';
+import { BucketsContainer } from './components/home/BucketsForm/BucketsContainer';
+import { BucketImage } from './components/home/BucketsForm/BucketImage';
+import { BucketInput } from './components/home/BucketsForm/BucketInput';
+import { SolveButton } from './components/home/BucketsForm/SolveButton';
 import { bucketInputs } from './utils/bucketInputs';
-import { ValidationError } from './components/home/ValidationError';
+import { ValidationError } from './components/home/BucketsForm/ValidationError';
 import { MainTitle } from './components/ui/MainTitle';
+import { SolutionGrid } from './components/home/ChallengeSolution/SolutionGrid';
 
 function App() {
-  const { values, validationError, onChangeValue, onClickButton } = useForm();
+  const {
+    values,
+    validationError,
+    challengeSolution,
+    onChangeValue,
+    onClickButton,
+  } = useForm();
 
   return (
     <main>
@@ -31,6 +38,9 @@ function App() {
       </BucketsContainer>
       <SolveButton onClickButton={onClickButton} />
       {validationError && <ValidationError />}
+      {challengeSolution && (
+        <SolutionGrid challengeSolution={challengeSolution} />
+      )}
     </main>
   );
 }

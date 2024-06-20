@@ -1,0 +1,17 @@
+.title, .text {
+    text-align: center;
+}
+
+.title {
+    font-size: 1.6rem;
+}
+
+.text {
+    margin: 24px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.grid-container {
+    padding: 20px 0 32px;
+}
