@@ -2,6 +2,7 @@ import { BucketsContainer } from './components/BucketsContainer';
 import { Bucket } from './components/Bucket';
 import { assets } from './utils/bucketImages';
 import { BucketInput } from './components/BuckeInput';
+import { SolveButton } from './components/SolveButton';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           </div>
         ))}
       </BucketsContainer>
+      <SolveButton />
     </main>
   );
 }
