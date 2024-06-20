@@ -5,8 +5,8 @@
 Welcome! This is an application created in order to solve the classic Water Jug Riddle. It is a Single Page Application in order to provide a nice UI to see the step-by-step solution for each group of entries.
 
 <p align="center">
-    <img src="https://i.imgur.com/I1IvxMW.png" width="300" height="500" title="Bucket icon by surang - Flaticon">
-    <img src="https://i.imgur.com/SR3FRub.png" width="300" height="500" title="Bucket icon by surang - Flaticon">
+    <img src="https://i.imgur.com/I1IvxMW.png" width="300" height="500" title="Application UI">
+    <img src="https://i.imgur.com/SR3FRub.png" width="300" height="500" title="Application UI with solution">
 </p>
 
 ## Backend's Github Repository
