@@ -8,6 +8,8 @@
     border-radius: 12px;
     background-color: #1d4ed8;
     font-size: 1.6rem;
+    font-weight: bold;
     color: #FFF;
     cursor: pointer;
+    font-family: "Quicksand", sans-serif;
 }

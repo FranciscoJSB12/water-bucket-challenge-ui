@@ -14,7 +14,7 @@ export const useForm = () => {
     setValues(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const onClickButton = () => {
+  const onClickButton = async () => {
     setValidationError(false);
     const pattern = /^([1-9]\d*)$/;
     const numbers = Object.values(values);
@@ -26,7 +26,23 @@ export const useForm = () => {
       };
     }
 
-    console.log(values);
+    const data = {
+      bucketX: values.bucketX,
+      bucketY: values.bucketY,
+      amountWantedZ: values.amountWanted
+    }
+
+    const res = await fetch('/api/bucket-challenge', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+
+    const result = await res.json();
+
+    console.log(result);
   };
 
   return {

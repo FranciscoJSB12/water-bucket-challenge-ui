@@ -7,3 +7,9 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-image: linear-gradient(to top,#4b5563,#9ca3af,#d1d5db);
+  min-height: 100vh;
+  font-family: "Quicksand", sans-serif;
+}
